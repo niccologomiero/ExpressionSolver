@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" focusTraversable="true" onKeyPressed="#handleKeyPressed" style="-fx-background-color: #F5F1E8;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="example.calcolatrice.controller.Controller">
+
+    <top>
+        <VBox alignment="CENTER" spacing="8">
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="15" />
+            </padding>
+
+            <TextField fx:id="displayEspressione" alignment="CENTER_RIGHT" editable="false" style="-fx-font-size: 22px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-border-color: #C9BCA8; -fx-border-width: 1px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+
+            <TextField fx:id="displayMessaggi" editable="false" style="-fx-font-size: 12px; -fx-background-color: #DED7C9; -fx-text-fill: #5C523F; -fx-border-color: #C9BCA8; -fx-border-width: 1px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+        </VBox>
+    </top>
+
+    <center>
+        <GridPane alignment="CENTER" hgap="10" vgap="10">
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="10" />
+            </padding>
+
+            <!-- ROW 0: Funzioni speciali -->
+            <Button focusTraversable="false" onAction="#clearDisplay" style="-fx-font-size: 16px; -fx-background-color: #C87137; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px;" text="C" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button focusTraversable="false" onAction="#backspace" style="-fx-font-size: 16px; -fx-background-color: #B8A88A; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px;" text="⌫" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 16px; -fx-background-color: #B8A88A; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px;" text="^" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 16px; -fx-background-color: #A67C52; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px;" text="/" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+            <!-- ROW 1: 7 8 9 * -->
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #A67C52; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+            <!-- ROW 2: 4 5 6 - -->
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="4" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #A67C52; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+            <!-- ROW 3: 1 2 3 + -->
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="1" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #A67C52; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+            <!-- ROW 4: ( 0 ) ENTER -->
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #B8A88A; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="(" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #E8E2D5; -fx-text-fill: #3D3026; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button focusTraversable="false" onAction="#handleButton" style="-fx-font-size: 20px; -fx-background-color: #B8A88A; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px;" text=")" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button style="-fx-font-size: 18px; -fx-background-color: #8B7355; -fx-text-fill: white; -fx-background-radius: 8px; -fx-cursor: hand; -fx-min-width: 70px; -fx-min-height: 60px; -fx-font-weight: bold;" onAction="#solveExpression" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+        </GridPane>
+    </center>
+
+</BorderPane>
