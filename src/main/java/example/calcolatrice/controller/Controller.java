@@ -114,7 +114,7 @@ public class Controller {
                 // Controlli
                 case BACK_SPACE -> backspace();
                 case DELETE -> clearDisplay();
-                case ENTER -> displayMessaggi.setText("Invio premuto");
+                case ENTER -> solveExpression();
 
 
                 default -> {
@@ -128,7 +128,7 @@ public class Controller {
     }
 
 
-    public void solveExpression(ActionEvent actionEvent) {
+    public void solveExpression() {
         String testo = displayEspressione.getText();
         testo = testo.replaceAll("^-(.*)","0-$1");
         testo = testo.replaceAll("\\(-(.*)","0-$1");
