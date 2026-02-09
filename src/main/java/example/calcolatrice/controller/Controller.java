@@ -12,6 +12,9 @@ import javafx.scene.layout.BorderPane;
 
 import java.util.Objects;
 
+/**
+ * Controller gestisce le azioni e i metodi relativi al frontend
+ */
 public class Controller {
     @FXML
     public BorderPane rootPane;
@@ -138,11 +141,9 @@ public class Controller {
         } catch (ExpressionException e) {
             // Mostra il messaggio di errore specifico
             displayMessaggi.setText(e.getMessage());
-            e.printStackTrace(); // Stampa anche lo stack trace nella console
 
         } catch (ArithmeticException e) {
             displayMessaggi.setText("Errore aritmetico: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 

@@ -1,5 +1,7 @@
 package example.calcolatrice.expression;
-
+/*
+Gestione priorità degli operatori, restituzione dei caaratteri associati
+ */
 public enum Operatore {
     ADD('+', 1, true), SUB('-', 1, true),
     MULT('*', 2, true), DIV('/', 2, true),

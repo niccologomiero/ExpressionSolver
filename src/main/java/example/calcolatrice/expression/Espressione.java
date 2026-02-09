@@ -3,7 +3,9 @@ package example.calcolatrice.expression;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
-
+/*La classe espressione prende la stringa e la risolve mediante
+i metodi che tokenizzano ogni parte dell'espressione
+ */
 public class Espressione {
     private String inputExpr; //ciò che arriva
     private ArrayList tokensList;
@@ -52,8 +54,11 @@ public class Espressione {
         espressione.calcRPN();
         return espressione.getRisultato();
     }
-// lettura stringa controllo parziale
 
+    /**
+     * Tokenizza ed esegue un controllo parziale
+     * @throws ExpressionException
+     */
     public void scanner() throws ExpressionException{
         long numeratore = 0;
         boolean inLetturaNumero = false;
@@ -87,7 +92,7 @@ public class Espressione {
                         tokensList.add(new Frazione(numeratore, 1));
                         inLetturaNumero = false;
                     }
-                    tokensList.add(Operatore.getOperatore(carattere)); // ✅ SEMPRE aggiungi l'operatore
+                    tokensList.add(Operatore.getOperatore(carattere));
                     break;
                 case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
                     if (inLetturaNumero) {
